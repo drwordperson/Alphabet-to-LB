@@ -20,9 +20,11 @@ This Python script removes punctuation, converts upper to lower-case letters, ha
 
 Currently, this script is only made available as a code sample.  Many points of linguistic complexity are elided, and there is still some room to improve the accuracy of the script when it comes to acronyms and foreign words.  Please don't publish with this script!  You have been warned.
 
-## Config
+## Instructions for Use
 
-For language-specific processing, Alphabet to Linear B takes a configuration file-- a Python script which eliminates many-to-one and one-to-many mappings between script and language, and also outlines the language's orthography and phonology.  Examples have been provided for Turkish and German.
+For language-specific processing, Alphabet to Linear B takes a configuration file-- a Python script which eliminates many-to-one and one-to-many mappings between script and language, and also outlines the language's orthography and phonology.  Alphabet to Linear B also takes a .txt file containing the section of text you would like converted.  Config files and data sets have been provided for Turkish and German.
+
+Upon running the script, you will be prompted for the name of the language-specific config file.  The config file will contain the name of the .txt file you wish to convert, so no need for anything else.  Sit back and enjoy!  You will see notifications when the input file is processed and the output file (OutputFile.txt) is written.  Current run time stands at around 10-15 minutes for 10k words, which is the size of the files provided as examples.
 
 ## Attribution
 
