@@ -22,11 +22,11 @@ For language-specific processing, ```Alphabet-to-Linear-B.py``` takes a configur
 
 ## Planned Improvements
 
-Consonant clusters eliminated all at once as part of a for loop (currently debugging this)
+Combining the multi-step elimination of consonant clusters into a single for loop.  (I am currently debugging this)
 
-Config files for additional languages (Finnish planned next)
+Creating configurations files for additional languages.  Finnish is planned next.
 
-Reduce runtime
+Finding ways of reducing the runtime.
 
 ## Disclaimer
 
