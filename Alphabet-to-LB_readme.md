@@ -36,4 +36,4 @@ Currently, this script is only made available as a code sample.  Many points of 
 
 This script was developed by Christina Skelton.  Special thanks to Ivan Lee, Laurel Selvig, Taylor Berg-Kirkpatrick, Sherrylyn Branchaw, and Mike Skelton for troubleshooting assistance.  
 
-Input data is taken from the [Leipzig Corpora Collection](https://corpora.uni-leipzig.de/)
+Input data is taken from the [Leipzig Corpora Collection](https://corpora.uni-leipzig.de/).
