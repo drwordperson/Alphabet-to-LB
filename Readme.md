@@ -6,6 +6,8 @@ This Python script removes punctuation, converts upper to lower-case letters, ha
 
 ## Usage
 
+```python Alphabet-To-LB.py```
+
 For language-specific processing, ```Alphabet-to-Linear-B.py``` takes a configuration file-- a Python script which eliminates many-to-one and one-to-many mappings between script and language, and also outlines the language's orthography and phonology.  ```Alphabet-to-Linear-B.py``` also takes a .txt file containing the section of text you would like converted.  Config files and data sets have been provided for Turkish and German, and sample inputs and outputs are as follows.
 
 #### German:
