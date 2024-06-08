@@ -1,4 +1,4 @@
-# If you are using Windows, and getting errors about the character encoding, you may need to set the environment variable PYTHONUTF8=1 from the command line first.
+# If you are using Windows, and getting errors about the character encoding, you may need to set the environment variable set PYTHONUTF8=1 from the command line first.
 import re
 
 # Open language-specific config file
@@ -53,55 +53,25 @@ for i in range(len(voiced)):
 
 # FINAL STOPS ARE WRITTEN, I assume from examples such as wa-na-ka.  Final fricatives, liquids, and nasals are not.
 
-p = f'({nasals})({stops}|{affrics})'
-pattern = re.compile(p)
-matches = pattern.findall(text)
-for match in matches:
-	text = text.replace(match[0]+match[1], match[1])
-    
-p = f'({nasals})({frics})'
-pattern = re.compile(p)
-matches = pattern.findall(text)
-for match in matches:
-	text = text.replace(match[0]+match[1], match[1])
-    
-p = f'({frics})({stops}|{affrics})'
-pattern = re.compile(p)
-matches = pattern.findall(text)
-for match in matches:
-	text = text.replace(match[0]+match[1], match[1])
-    
-p = f'({liquids})({stops}|{affrics})'
-pattern = re.compile(p)
-matches = pattern.findall(text)
-for match in matches:
-	text = text.replace(match[0]+match[1], match[1])
-    
-p = f'({liquids})({nasals})'
-pattern = re.compile(p)
-matches = pattern.findall(text)
-for match in matches:
-	text = text.replace(match[0]+match[1], match[1])
-    
-p = f'({liquids})({frics})'
-pattern = re.compile(p)
-matches = pattern.findall(text)
-for match in matches:
-	text = text.replace(match[0]+match[1], match[1])
-    
-p = f'({liquids})({glides})'
-pattern = re.compile(p)
-matches = pattern.findall(text)
-for match in matches:
-	text = text.replace(match[0]+match[1], match[1])
-    
-p = f'({glides})({liquids})'
-pattern = re.compile(p)
-matches = pattern.findall(text)
-for match in matches:
-	text = text.replace(match[0]+match[1], match[1])
-    
-#  Delete final consonants
+# This takes care of word-initial and word-medial clusters
+
+clusters = \
+[f'({nasals})({stops}|{affrics})', 
+f'({nasals})({frics})', 
+f'({frics})({stops}|{affrics})',
+f'({liquids})({stops}|{affrics})',
+f'({liquids})({nasals})',
+f'({liquids})({frics})',
+f'({liquids})({glides})',
+f'({glides})({liquids})']
+
+for cluster in clusters:
+    pattern = re.compile(cluster) 
+    matches = pattern.findall(text)
+    for match in matches:
+        text = text.replace(match[0]+match[1], match[1])
+
+# This takes care of word-final clusters
 
 p = f'({frics}|{nasals}|{liquids}|{glides})({whitespace})'
 pattern = re.compile(p)
@@ -141,16 +111,3 @@ myfile = open('OutputFile.txt', 'w')
 myfile.write(text)
 print('Output file written')
 myfile.close()
-
-# Next:  add dummy vowels where appropriate-- between consonant clusters and at word end.
-
-# p = f'({vowels})({stops}|{affrics})({whitespace})'
-# pattern = re.compile(p)
-# matches = pattern.findall(text)
-# print(matches)
-# for match in matches:
-    # text = text.replace(match[2], match[0]+match[2])
-
-
-
-# Convert to Akkadian Cuneiform spelling
